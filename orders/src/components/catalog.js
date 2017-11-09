@@ -87,7 +87,6 @@ class Catalog extends Component {
     }
 
     this.setState(instructions)
-
     this.setState({ activePage: pageNumber })
     getProducts(this.props.dispatch, instructions)
 
@@ -104,7 +103,6 @@ class Catalog extends Component {
       ordersView: false,
       product: product
     }
-
     viewProduct(this.props.dispatch, instructions)
   }
 

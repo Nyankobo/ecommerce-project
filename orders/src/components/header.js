@@ -22,8 +22,6 @@ class Header extends Component {
             showModalResponsive: false,
             showModalLogin: false,
             showModalLoginResponsive: false,
-
-
         }
         this.readyToCheckout = this.readyToCheckout.bind(this)
         this.placeOrder = this.placeOrder.bind(this)
@@ -64,7 +62,13 @@ class Header extends Component {
         this.setState({
             username: ''
         })
-        this.props.displayCatalog()
+        
+        let instructions = {
+            catalogView: true,
+            productView: false,
+            ordersView: false
+        }
+        menuChoice(this.props.dispatch, instructions)
     }
 
     handleOpenModal() {
@@ -197,7 +201,7 @@ class Header extends Component {
                                     MENU
                                     <div className="navs-narrow">
                                         <ul className="navs">
-                                        <li onClick={this.goToCatalog}>PRODUCT CATALOG</li>
+                                        <li onClick={this.goToCatalog}>CATALOG</li>
                                         <li onClick={this.goToOrders}>ORDERS</li>
                                         <li onClick={this.onLogout.bind(this)}>LOGOUT</li>
                                         </ul>
@@ -240,7 +244,8 @@ class Header extends Component {
 
                 </div>
                 <div>
-                    {/* USER MENU & CART ICON - STANDARD - LOGGED IN */}
+                    {/* USER MENU & CART ICON - 
+                    STANDARD - LOGGED IN */}
                     {this.state.username !== '' ?
                         <div className="account-icon-container">
                             <MediaQuery query="(min-device-width: 600px)">
@@ -292,7 +297,7 @@ class Header extends Component {
 
                 </div>
 
-                {/* STANDARD VIEW - check if logged in, view cart details. If order placed, confirmation : otherwise checkout*/}
+                {/* STANDARD CART POPUP - check if logged in, view cart details. If order placed, confirmation : otherwise checkout*/}
                 <ReactModal
                     isOpen={this.state.showModal}
                     contentLabel="Shopping Cart"
