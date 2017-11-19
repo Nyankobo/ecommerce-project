@@ -26,10 +26,27 @@ namespace orders_library.Services
         {
             //view amt
             //start val
-            //user id
+            //category
+
 
             using (var context = DbContextFactory.Create())  {
-                var query = context.Product.OrderBy(n => n.Id).Skip(instructions.startVal).Take(instructions.viewAmt).ToList();
+
+                var query = context.Product.ToList();
+
+                Console.WriteLine(instructions.category);
+
+                switch (instructions.category)
+                {
+                    case "all":
+                        query = context.Product
+                                       .OrderBy(n => n.Id).Skip(instructions.startVal).Take(instructions.viewAmt).ToList();
+                        break;
+                    default:
+                        query = context.Product
+                                       .OrderBy(n => n.Id).Where(c => c.Category == instructions.category)
+                                       .Skip(instructions.startVal).Take(instructions.viewAmt).ToList();
+                        break;
+                }
 
                 return query;
             }

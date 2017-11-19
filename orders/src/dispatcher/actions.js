@@ -30,6 +30,14 @@ export function getProducts(dispatch, instructions) {
         })
 }
 
+//SET CATEGORY
+export function setCategory(dispatch, category) {
+    dispatch({
+        type: "SET_CATEGORY_STARTED"
+    })
+    dispatch({ type: "SET_CATEGORY_FINISHED", payload: category })
+}
+
 //VIEW A PRODUCT
 export function viewProduct(dispatch, instructions) {
     dispatch({

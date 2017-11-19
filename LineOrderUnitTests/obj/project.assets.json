@@ -7754,11 +7754,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tanyalandreth/Desktop/tanya_orders/LineOrderUnitTests/LineOrderUnitTests.csproj",
+      "projectUniqueName": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/LineOrderUnitTests/LineOrderUnitTests.csproj",
       "projectName": "LineOrderUnitTests",
-      "projectPath": "/Users/tanyalandreth/Desktop/tanya_orders/LineOrderUnitTests/LineOrderUnitTests.csproj",
+      "projectPath": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/LineOrderUnitTests/LineOrderUnitTests.csproj",
       "packagesPath": "/Users/tanyalandreth/.nuget/packages/",
-      "outputPath": "/Users/tanyalandreth/Desktop/tanya_orders/LineOrderUnitTests/obj",
+      "outputPath": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/LineOrderUnitTests/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tanyalandreth/.config/NuGet/NuGet.Config"
@@ -7772,8 +7772,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/tanyalandreth/Desktop/tanya_orders/orders_library/orders_library.csproj": {
-              "projectPath": "/Users/tanyalandreth/Desktop/tanya_orders/orders_library/orders_library.csproj"
+            "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/orders_library/orders_library.csproj": {
+              "projectPath": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/orders_library/orders_library.csproj"
             }
           }
         }

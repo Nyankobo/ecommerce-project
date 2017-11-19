@@ -5958,11 +5958,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tanyalandreth/Desktop/tanya_orders/orders_library/orders_library.csproj",
+      "projectUniqueName": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/orders_library/orders_library.csproj",
       "projectName": "orders_library",
-      "projectPath": "/Users/tanyalandreth/Desktop/tanya_orders/orders_library/orders_library.csproj",
+      "projectPath": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/orders_library/orders_library.csproj",
       "packagesPath": "/Users/tanyalandreth/.nuget/packages/",
-      "outputPath": "/Users/tanyalandreth/Desktop/tanya_orders/orders_library/obj",
+      "outputPath": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/orders_library/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tanyalandreth/.config/NuGet/NuGet.Config"

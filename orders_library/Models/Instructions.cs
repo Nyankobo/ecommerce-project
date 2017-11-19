@@ -8,5 +8,6 @@ namespace orders_library
         public int startVal { get; set; }
         public int viewAmt { get; set; }
         public int userid { get; set; }
+        public string category { get; set; }
     }
 }

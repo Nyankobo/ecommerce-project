@@ -1,31 +1,11 @@
 ﻿<Properties StartupConfiguration="{5A407D47-D871-4F7C-B664-699CE7CA44D6}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.ItemProperties.tanya__orders PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="LineOrderUnitTests/LineOrderUnitTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="orders_library/Services/ProductManager.cs">
     <Files>
-      <File FileName="ordersAPI/Controllers/OrdersController.cs" Line="11" Column="13" />
-      <File FileName="orders_library/Services/OrderManager.cs" Line="78" Column="76" />
-      <File FileName="LineOrderUnitTests/LineOrderUnitTests.cs" Line="36" Column="23" />
+      <File FileName="ordersAPI/Controllers/OrdersController.cs" Line="195" Column="45" />
+      <File FileName="orders_library/Services/ProductManager.cs" Line="46" Column="80" />
+      <File FileName="orders_library/Models/Product.cs" Line="14" Column="31" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="tanya_orders" expanded="True" selected="True">
-            <Node name="UnitTests" expanded="True">
-              <Node name="LineOrderUnitTests" expanded="True">
-                <Node name="LineOrderUnitTests" expanded="True">
-                  <Node name="UnitTest1" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="ShippingCustomerUnitTests" expanded="True">
-                <Node name="ShippingAndCustomerTests" expanded="True">
-                  <Node name="UnitTest1" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.ordersAPI PreferredExecutionTarget="MonoDevelop.Default" />

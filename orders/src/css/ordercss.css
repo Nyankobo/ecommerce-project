@@ -64,6 +64,7 @@
 
     .order-cell-click:hover {
       background-color: gold;
+      cursor: pointer;
     }
 
   .order-title h3, h5 {

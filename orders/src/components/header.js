@@ -6,7 +6,7 @@ import Cart from './cart'
 import LineItem from '../models/lineitem'
 import OrderModel from '../models/ordermodel'
 import Login from './login'
-import { completeOrder, clearCart, menuChoice } from "../dispatcher/actions"
+import { completeOrder, clearCart, menuChoice, getProducts, setCategory } from "../dispatcher/actions"
 import MediaQuery from 'react-responsive'
 
 class Header extends Component {
@@ -36,7 +36,7 @@ class Header extends Component {
 
         this.goToCatalog = this.goToCatalog.bind(this)
         this.goToOrders = this.goToOrders.bind(this)
-        
+
     }
 
     onLogin(username) {
@@ -44,25 +44,19 @@ class Header extends Component {
             username: username
         })
 
-        if (this.state.showModal && !this.state.checkingout && this.props.shoppingCart.length > 0) {
-
-        }
-        if (this.state.showModalResponsive && !this.state.checkingout && this.props.shoppingCart.length > 0) {
-        }
-
-        if (this.state.checkingout && this.props.shoppingCart.length > 0) {
-        }
-
-        else {
+        if ((!this.state.showModal && this.state.checkingout && this.props.shoppingCart.length <= 0) ||
+            (!this.state.showModalResponsive && this.state.checkingout && this.props.shoppingCart.length <= 0) ||
+            (!this.state.checkingout && this.props.shoppingCart.length <= 0)) {
             this.handleCloseModal()
         }
+
     }
 
     onLogout() {
         this.setState({
             username: ''
         })
-        
+
         let instructions = {
             catalogView: true,
             productView: false,
@@ -162,24 +156,32 @@ class Header extends Component {
 
     }
 
-    goToCatalog(){
-        let instructions = {
+    goToCatalog() {
+        let viewInstructions = {
             catalogView: true,
             productView: false,
             ordersView: false
         }
-        menuChoice(this.props.dispatch, instructions)
+        menuChoice(this.props.dispatch, viewInstructions)
+
+            let instructions = {
+              viewAmt: 10,
+              startVal: 0,
+              category: "all"
+            }
+
+            getProducts(this.props.dispatch, instructions)
+            setCategory(this.props.dispatch, instructions.category)
     }
 
-    goToOrders()
-    {
+    goToOrders() {
         let instructions = {
             catalogView: false,
             productView: false,
             ordersView: true
         }
         menuChoice(this.props.dispatch, instructions)
-    } 
+    }
 
     render() {
 
@@ -201,9 +203,9 @@ class Header extends Component {
                                     MENU
                                     <div className="navs-narrow">
                                         <ul className="navs">
-                                        <li onClick={this.goToCatalog}>CATALOG</li>
-                                        <li onClick={this.goToOrders}>ORDERS</li>
-                                        <li onClick={this.onLogout.bind(this)}>LOGOUT</li>
+                                            <li onClick={this.goToCatalog}>CATALOG</li>
+                                            <li onClick={this.goToOrders}>ORDERS</li>
+                                            <li onClick={this.onLogout.bind(this)}>LOGOUT</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -224,7 +226,7 @@ class Header extends Component {
                                     MENU
                                     <div className="navs-narrow">
                                         <ul className="navs">
-                                        <li onClick={this.goToCatalog}>CATALOG</li>
+                                            <li onClick={this.goToCatalog}>CATALOG</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -234,7 +236,7 @@ class Header extends Component {
                                 <div className="nav-wide-container">
                                     <div className="navs-wide">
                                         <ul className="navs">
-                                        <li onClick={this.goToCatalog}>PRODUCT CATALOG</li>
+                                            <li onClick={this.goToCatalog}>PRODUCT CATALOG</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -265,7 +267,8 @@ class Header extends Component {
 
 
                             </MediaQuery>
-                            {/* USER MENU & CART ICON - RESPONSIVE - LOGGED IN  */}
+                            {/* USER MENU & CART ICON - 
+                            RESPONSIVE - LOGGED IN  */}
                             <MediaQuery query="(max-device-width: 600px)">
                                 <button className="cart" onClick={this.handleOpenModalResponsive}>
                                     <span className="glyphicon glyphicon-shopping-cart"></span>&nbsp;

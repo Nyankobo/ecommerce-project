@@ -16788,11 +16788,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tanyalandreth/Desktop/tanya_orders/tanya_orders/tanya_orders.csproj",
+      "projectUniqueName": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/tanya_orders/tanya_orders.csproj",
       "projectName": "tanya_orders",
-      "projectPath": "/Users/tanyalandreth/Desktop/tanya_orders/tanya_orders/tanya_orders.csproj",
+      "projectPath": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/tanya_orders/tanya_orders.csproj",
       "packagesPath": "/Users/tanyalandreth/.nuget/packages/",
-      "outputPath": "/Users/tanyalandreth/Desktop/tanya_orders/tanya_orders/obj",
+      "outputPath": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/tanya_orders/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tanyalandreth/.config/NuGet/NuGet.Config"
@@ -16806,8 +16806,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/tanyalandreth/Desktop/tanya_orders/orders_library/orders_library.csproj": {
-              "projectPath": "/Users/tanyalandreth/Desktop/tanya_orders/orders_library/orders_library.csproj"
+            "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/orders_library/orders_library.csproj": {
+              "projectPath": "/Users/tanyalandreth/Desktop/orders_sds/Incubator2017Tanya/orders_library/orders_library.csproj"
             }
           }
         }

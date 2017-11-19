@@ -7,7 +7,7 @@ let initialState = {
     lastOrder: {},
     productList: [],
     productDetails: {},
-    processing: '',
+    processing: "",
     APICallInProgress: false,
     APICallFailed: null,
     cartView: false,
@@ -16,7 +16,8 @@ let initialState = {
 
     catalogView: true,
     ordersView: false,
-    productView: false
+    productView: false,
+    category: "all"
 }
 export default function reducer(store = initialState, action) {
 
@@ -118,6 +119,15 @@ export default function reducer(store = initialState, action) {
         }
         case "GET_PRODUCTS_FINISHED": {
             return { ...store, productList: action.payload, APICallInProgress: false }
+        }
+
+        //SET CATEGORY_______________________________________________________________________:
+        case "SET_CATEGORY_STARTED": {
+            console.log("### Setting Category.....")
+            return { ...store, APICallInProgress: true, APICallFailed: null }
+        }
+        case "SET_CATEGORY_FINISHED": {
+            return { ...store, category: action.payload, APICallInProgress: false }
         }
 
         //VIEW A PRODUCT_______________________________________________________________________:

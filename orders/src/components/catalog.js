@@ -17,7 +17,8 @@ class Catalog extends Component {
       activePage: 1,
       productView: false,
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight,
+      category: "all"
     };
     this.getMoreProducts = this.getMoreProducts.bind(this);
     this.seeProduct = this.seeProduct.bind(this);
@@ -36,6 +37,7 @@ class Catalog extends Component {
       let instructions = {
         viewAmt: 10,
         startVal: this.state.startVal,
+        category: this.state.category
       }
       this.setState(instructions)
       getProducts(this.props.dispatch, instructions)
@@ -46,6 +48,7 @@ class Catalog extends Component {
       let instructions = {
         viewAmt: 6,
         startVal: this.state.startVal,
+        category: this.state.category
       }
       this.setState(instructions)
       getProducts(this.props.dispatch, instructions)
@@ -76,6 +79,7 @@ class Catalog extends Component {
     let instructions = {
       viewAmt: this.state.viewAmt,
       startVal: start,
+      category: this.state.category
     }
 
     if (this.state.width > 800) {
@@ -144,6 +148,8 @@ class Catalog extends Component {
               </div>
             </MediaQuery>
             <nav className="pgs-nav">
+
+            {this.props.category === "all" ? 
               <Pagination
                 innerClass="pgs-outer"
                 itemClass="pgs-inner"
@@ -154,6 +160,8 @@ class Catalog extends Component {
                 totalItemsCount={this.props.productCount}
                 onChange={this.getMoreProducts.bind(this)}
               />
+
+              : ""}
             </nav>
           </div>
         </div>
@@ -167,6 +175,8 @@ export default connect(
     productList: store.productList,
     productCount: store.productCount,
     productDetails: store.productDetails,
-    productView: store.productView
+    productView: store.productView,
+
+    category: store.category
   })
 )(Catalog);
